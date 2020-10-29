@@ -1,0 +1,7 @@
+# npm dependencies
+node_modules/
+
+# Build artifacts
+dist/
+
+todo
