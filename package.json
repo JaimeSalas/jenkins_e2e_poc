@@ -7,6 +7,8 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode development",
     "cypress": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e:local": "start-server-and-test start http://localhost:8081 cy:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +28,7 @@
     "@babel/preset-env": "^7.12.1",
     "babel-loader": "^8.1.0",
     "cypress": "^5.5.0",
+    "start-server-and-test": "^1.11.5",
     "webpack": "^5.3.1",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
