@@ -15,10 +15,6 @@ pipeline {
                 script {
                     docker.script.sh(script: "docker run --rm jaimesalas/e2e", returnStdout: false)
                 }
-                // image.name()
-                // docker.node {
-                   
-                // }
             }
         }
     }

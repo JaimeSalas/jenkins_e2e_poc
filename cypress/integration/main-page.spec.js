@@ -5,6 +5,5 @@ describe('main page', () => {
         cy.visit('/');
         cy.get("body")
             .contains('average score');
-            // .contains('hola');
     });
 });
