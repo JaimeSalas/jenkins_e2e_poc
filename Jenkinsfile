@@ -12,8 +12,12 @@ pipeline {
         }
         stage('e2e') {
             steps {
-                script {
-                    image.run('-i -t')
+                // script {
+                //     sh 'echo ${image}' 
+                // }
+                // image.name()
+                docker.node {
+                   docker.script.sh(script: "docker run --rm jaimesalas/e2e", returnStdout: false)
                 }
             }
         }
