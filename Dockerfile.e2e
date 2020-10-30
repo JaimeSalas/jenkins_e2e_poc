@@ -1,6 +1,6 @@
 FROM cypress/base:10
 
-WORKDIR /app
+# WORKDIR /app
 
 COPY . .
 
@@ -8,4 +8,5 @@ RUN npm install
 
 RUN $(npm bin)/cypress verify
 
-CMD [ "start-server-and-test", "start", "http://localhost:8081", "cy:run" ]  
+# CMD [ "start-server-and-test", "start", "http://localhost:8081", "cy:run" ]  
+CMD [ "npm", "run", "test:e2e:local"  ]

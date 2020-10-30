@@ -13,7 +13,7 @@ pipeline {
         stage('e2e') {
             steps {
                 script {
-                    image.withRun {c ->
+                    image.withRun('') {c ->
                         sh "docker logs ${c.id}"
                     } 
                 }
