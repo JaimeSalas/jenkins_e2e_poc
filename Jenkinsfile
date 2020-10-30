@@ -14,8 +14,8 @@ pipeline {
             steps {
                 script {
                     image.withRun {c ->
-                        sh 'npm run test:e2e:local'
-                        sh "docker logs ${c.id}"
+                        container = image.run('jaimesalas/e2e npm run test:e2e:local')
+                        container.stop()
                     }
                 }
             }
