@@ -13,10 +13,8 @@ pipeline {
         stage('e2e') {
             steps {
                 script {
-                    image.withRun {c ->
-                        container = image.run('jaimesalas/e2e npm run test:e2e:local')
-                        container.stop()
-                    }
+                    container = image.run('jaimesalas/e2e npm run test:e2e:local')
+                    container.stop()    
                 }
             }
         }
