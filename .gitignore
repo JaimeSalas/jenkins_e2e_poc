@@ -8,4 +8,7 @@ dist/
 cypress/videos
 cypress/screenshots
 
+# environment variables
+.env
+
 todo
