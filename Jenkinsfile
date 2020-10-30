@@ -13,7 +13,7 @@ pipeline {
         stage('e2e') {
             steps {
                 script {
-                    docker.script.sh(script: "docker run --rm jaimesalas/e2e", returnStdout: false)
+                    docker.script.sh(script: "docker run --rm jaimesalas/e2e npm run test:e2e:local", returnStdout: false)
                 }
             }
         }
