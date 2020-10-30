@@ -12,13 +12,13 @@ pipeline {
         }
         stage('e2e') {
             steps {
-                // script {
-                //     sh 'echo ${image}' 
-                // }
-                // image.name()
-                docker.node {
-                   docker.script.sh(script: "docker run --rm jaimesalas/e2e", returnStdout: false)
+                script {
+                    docker.script.sh(script: "docker run --rm jaimesalas/e2e", returnStdout: false)
                 }
+                // image.name()
+                // docker.node {
+                   
+                // }
             }
         }
     }
