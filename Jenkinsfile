@@ -33,7 +33,10 @@ pipeline {
                 script {
                     withDockerNetwork{n ->
                         back.withRun("--name e2e-back --network ${n} -e PORT=4000") {c ->
-
+                            docker.script.sh(
+                                script: "docker run --rm -e API_URL=http://e2e-back:4000 --network ${n} jaimesalas/e2e npm run test:e2e", 
+                                returnStdout: false
+                            )
                         }
                     }
                 }
