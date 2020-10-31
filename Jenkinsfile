@@ -1,16 +1,16 @@
-// def front
+def front
 def back 
 
 pipeline {
     agent any
     stages {
-        // stage('Build front') {
-        //     steps {
-        //         script {
-        //             front = docker.build("jaimesalas/e2e", "--pull -f ./front/Dockerfile.e2e ./front")
-        //         }
-        //     }
-        // }
+        stage('Build front') {
+            steps {
+                script {
+                    front = docker.build("jaimesalas/e2e", "--pull -f ./front/Dockerfile.e2e ./front")
+                }
+            }
+        }
         stage('Build back') {
             steps {
                 script {
@@ -21,7 +21,7 @@ pipeline {
         stage ('e2e') {
             steps {
                 script {
-                    sh 'echo "$back"'
+                    sh 'echo future e2e'
                 }
             }
         }
