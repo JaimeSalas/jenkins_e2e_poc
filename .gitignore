@@ -11,4 +11,6 @@ cypress/screenshots
 # environment variables
 .env
 
+back/package-lock.json
+
 todo
