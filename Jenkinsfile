@@ -32,7 +32,9 @@ pipeline {
             steps {
                 script {
                     withDockerNetwork{n ->
-                        sh 'echo "$n"'
+                        back.withRun("--name e2e-back --network ${n} -e PORT=4000") {c ->
+
+                        }
                     }
                 }
             }
