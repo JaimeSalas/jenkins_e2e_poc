@@ -2,6 +2,8 @@ FROM cypress/base:10
 
 COPY . .
 
+ARG API_URL
+
 RUN npm install
 
 RUN $(npm bin)/cypress verify

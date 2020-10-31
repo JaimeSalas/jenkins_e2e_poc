@@ -1,7 +1,14 @@
 import { getAvg } from './avarageService';
+import axios from 'axios';
 
-const scores = [90, 75, 60, 99, 94, 30];
-const averageScore = getAvg(scores);
-const messageToDisplay = `average score ${averageScore}`;
-
-document.write(messageToDisplay);
+document.addEventListener('DOMContentLoaded', () => {
+    const url = `${process.env.API_URL}/scores`;
+    axios.get(url)
+        .then(({ data }) => {
+            const { scores } = data;
+            const averageScore = getAvg(scores);
+            const messageToDisplay = `average score ${averageScore}`;
+            document.write(messageToDisplay);
+        })
+        .catch(console.error);
+});
