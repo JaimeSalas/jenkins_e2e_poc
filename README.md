@@ -37,7 +37,7 @@ $ docker build -t jaimesalas/e2e --build-arg API_URL=http://e2e-back:4000 -f ./f
 5. Run e2e tests
 
 ```bash
-$ docker run --rm --network e2e jaimesalas/e2e npm run test:e2e:local -- api_url=http://e2e-back:4000
+$ docker run --rm -e API_URL=http://e2e-back:4000 --network e2e jaimesalas/e2e npm run test:e2e
 ```
 
 ## References
@@ -46,3 +46,4 @@ $ docker run --rm --network e2e jaimesalas/e2e npm run test:e2e:local -- api_url
 > Running multiple docker containers in parallel: https://www.kabisa.nl/tech/running-multiple-docker-containers-in-parallel-with-jenkins/
 > Ability to run Docker container in foreground mode (no detached): https://issues.jenkins-ci.org/browse/JENKINS-48417
 > Asserting Network calls from Cypress Tests: https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/
+> Cypress env variables guide: https://docs.cypress.io/guides/guides/environment-variables.html#Option-4-env

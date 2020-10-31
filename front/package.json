@@ -8,7 +8,9 @@
     "build": "webpack --mode development",
     "cypress": "cypress open",
     "cy:run": "cypress run",
+    "cy:run:env": "cypress run --env api_url=http://e2e-back:4000/scores",
     "test:e2e:local": "start-server-and-test start http://localhost:8081 cy:run",
+    "test:e2e": "start-server-and-test start http://localhost:8081 cy:run:env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -6,6 +6,8 @@ describe('main page', () => {
         console.log(url);
 
         cy.server();
+        // cy.route('GET', 'http://e2e-back:4000/scores')
+        //     .as('scores');
         cy.route('GET', url)
             .as('scores');
 
